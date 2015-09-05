@@ -1,0 +1,41 @@
+#load_image is used in most pygame programs for loading images
+
+import pygame
+import os.  path
+
+import pygame, sys
+ 
+white = (255, 255, 255)
+black = (0, 0, 0)
+ 
+pygame.init()
+pygame.display.set_caption('Mouse Example')
+size = [640, 480]
+screen = pygame.display.set_mode(size)
+clock = pygame.time.Clock()
+ 
+# make os mouse pointer icon invisible
+pygame.mouse.set_visible(False)
+ 
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        # print if mouse is pressed.
+        # get_pressed() tells you which mouse button is pressed
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            event in pygame.event.get()
+            event.type == pygame.QUIT
+            pygame.quit()
+            sys.exit()
+            
+    screen.fill(white)
+ 
+    # draw a circle around the mouse pointer
+    pos = (pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])
+    pygame.draw.circle(screen, black, pos, 10, 0)
+ 
+    pygame.display.update()
+ 
+    clock.tick(20)
